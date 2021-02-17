@@ -51,8 +51,8 @@ Login = (username, password) => {
         if (checkBoxValue === 'remember-me') {
             localStorage.setItem("user", username);
             localStorage.setItem("password", password);
-            localStorage.setItem("token", 'bdfsldbfdsiulfbgeduifjeluguglbkjvdm');
         }
+        localStorage.setItem("token", 'bdfsldbfdsiulfbgeduifjeluguglbkjvdm');
         return true
     } else {
         errorMessage.removeAttribute('hidden')
