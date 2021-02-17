@@ -1,5 +1,3 @@
-console.log('Workkingg')
-
 
 
 var loading = document.getElementById('Loading')
@@ -21,9 +19,14 @@ var TodaysTasks = [];
 var tempArray = []
 
 window.onload = function () {
-    loading.removeAttribute('hidden');
-    container.setAttribute('hidden', 'true');
-    load()
+    if (localStorage.getItem('token')) {
+        loading.removeAttribute('hidden');
+        container.setAttribute('hidden', 'true');
+        load()
+    } else {
+        window.location.href = "./index.html";
+    }
+
 }
 
 load = () => {
@@ -58,7 +61,7 @@ load = () => {
 }
 
 oncheck = (value) => {
-    console.log('dd', value);
+    // console.log('dd', value);
     currentOpendModal = value;
     document.getElementById('exampleModalCenter').classList.add('show')
 
@@ -108,7 +111,7 @@ colseModal = () => {
 }
 
 onConfirm = () => {
-    console.log(currentOpendModal + ' => completed');
+    //console.log(currentOpendModal + ' => completed');
     document.getElementById('all' + currentOpendModal).disabled = 'true';
     document.getElementById('Link' + currentOpendModal).classList.add('list-group-item-success')
     Alltasks = Alltasks.filter(task => {
@@ -119,11 +122,11 @@ onConfirm = () => {
             tempArray.push(task)
             removeFromPending(task.id);
             checkFiveTaskCompleted().then(() => {
-                console.log('5 tasks completed');
+                // console.log('5 tasks completed');
                 document.getElementById('CompletedModal').classList.add('show');
                 tempArray = []
             }).catch(() => {
-                console.log('5 tasks not completed');
+                // console.log('5 tasks not completed');
             })
         }
         return task
@@ -166,5 +169,6 @@ checkFiveTaskCompleted = () => {
 }
 
 logOut = () => {
+    localStorage.removeItem('token')
     window.location.href = "./index.html";
 }
