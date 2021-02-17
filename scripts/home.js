@@ -76,7 +76,7 @@ renderTasks = (list, roottag) => {
 
         if (item.completed) {
             innerContent += `<a id="Link${item.id}" class="list-group-item list-group-item-action flex-row d-flex align-items-center  align-items-start list-group-item-success ">
-            <img class="mr-2" src="https://suhail135.github.io/TodoApp/assets/complete.png" height="40"  />
+            <img id="LIMG${item.id}" class="mr-2" src="https://suhail135.github.io/TodoApp/assets/complete.png" height="40"  />
             <div class="d-flex w-100 justify-content-between">
                 
                 <h6 class="mb-1 text-capitalize">${item.title}</h6>
@@ -87,7 +87,7 @@ renderTasks = (list, roottag) => {
             </a>`
         } else {
             innerContent += `<a id="Link${item.id}" class="list-group-item list-group-item-action  flex-row d-flex align-items-center  align-items-start ">
-            <img class="mr-2" src="https://suhail135.github.io/TodoApp/assets/list.png" height="40"  />
+            <img id="LIMG${item.id}" class="mr-2" src="https://suhail135.github.io/TodoApp/assets/list.png" height="40"  />
             <div class="d-flex w-100 justify-content-between">
                
                 <h6 class="mb-1 text-capitalize">${item.title}</h6>
@@ -106,14 +106,16 @@ renderTasks = (list, roottag) => {
 colseModal = () => {
     if (currentOpendModal) {
         document.getElementById('all' + currentOpendModal).checked = false;
-        hideModal()
+        hideModal('exampleModalCenter')
     }
+    currentOpendModal = null;
 }
 
 onConfirm = () => {
     //console.log(currentOpendModal + ' => completed');
     document.getElementById('all' + currentOpendModal).disabled = 'true';
     document.getElementById('Link' + currentOpendModal).classList.add('list-group-item-success')
+    document.getElementById('LIMG' + currentOpendModal).setAttribute('src', 'https://suhail135.github.io/TodoApp/assets/complete.png')
     Alltasks = Alltasks.filter(task => {
         if (currentOpendModal == task.id) {
             task.completed = true;
