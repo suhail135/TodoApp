@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link rel="stylesheet" href="./styles/styles.css">
+    <title>ToDo</title>
+</head>
+
+<body class="text-center">
+    <main class="form-signin">
+        <form class="form" action="./dashboard.html" onsubmit="return Validate(Login)">
+            <img class="mb-4" src="./assets/logo.png" alt="" width="72" height="72">
+            <h1 class="h3 mb-3 fw-normal">Welcome Back !</h1>
+            <input onkeypress="restError()" id="inputUser" class="form-control has-validation" placeholder="User name"
+                required autofocus>
+            <input onkeypress="restError()" type="password" id="inputPassword" class="form-control has-validation"
+                placeholder="Password" required>
+            <div class="checkbox my-2 text-start">
+                <label>
+                    <input id="checkBox" type="checkbox" value="remember-me"> Remember me
+                </label>
+
+            </div>
+            <p class="my-2 text-danger fs-6 " hidden="true" id="showMessage">Invalid user name or password</p>
+            <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
+            <p class="mt-5 mb-3 text-muted">&copy; Suhail 2021</p>
+        </form>
+    </main>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+        crossorigin="anonymous"></script>
+    <script src="./scripts/login.js"></script>
+</body>
+
+</html>

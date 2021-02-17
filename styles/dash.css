@@ -1,0 +1,79 @@
+html,
+body {
+  height: 100%;
+}
+
+body {
+  padding-bottom: 40px;
+  background-color: #f7f9fc;
+}
+
+.bg-color {
+  background-color: #fff;
+}
+
+.show {
+  display: flex;
+  height: inherit;
+  align-items: center;
+  justify-content: center;
+  background-color: #f7f9fc;
+}
+
+.mycard {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex: 1;
+}
+.mycard-body {
+  flex: 1;
+}
+
+.badge-soft-success {
+  color: #fff;
+  background-color: rgba(75, 191, 115, 0.175);
+  color: #4bbf73;
+}
+.card {
+  margin-bottom: 24px;
+  box-shadow: 0 0 0.875rem 0 rgb(41 48 66 / 5%);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 0 solid transparent;
+  border-radius: 0.25rem;
+}
+
+@media (max-width: 991.98px) {
+  .mycard {
+    justify-content: space-between;
+    flex: 1;
+  }
+  @media (max-width: 575.98px) {
+    .mycard {
+      justify-content: space-between;
+      flex: 1;
+    }
+  }
+}
+
+.navbar {
+  border-bottom: 0;
+  box-shadow: 0 0 2rem 0 rgb(41 48 66 / 10%);
+}
+.show {
+  display: flex;
+  height: inherit;
+  align-items: center;
+  justify-content: center;
+  background-color: #9f9f9f3d;
+}
+
+.mr-2 {
+  margin-right: 5px;
+}
