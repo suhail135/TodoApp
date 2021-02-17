@@ -22,6 +22,7 @@ var tempArray = []
 
 window.onload = function () {
     loading.removeAttribute('hidden');
+    container.setAttribute('hidden', 'true');
     load()
 }
 
