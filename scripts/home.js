@@ -69,7 +69,7 @@ renderTasks = (list, roottag) => {
 
         if (item.completed) {
             innerContent += `<a id="Link${item.id}" class="list-group-item list-group-item-action flex-row d-flex align-items-center  align-items-start list-group-item-success ">
-            <img class="mr-2" src="../assets/complete.png" height="40"  />
+            <img class="mr-2" src="./assets/complete.png" height="40"  />
             <div class="d-flex w-100 justify-content-between">
                 
                 <h6 class="mb-1 text-capitalize">${item.title}</h6>
@@ -80,7 +80,7 @@ renderTasks = (list, roottag) => {
             </a>`
         } else {
             innerContent += `<a id="Link${item.id}" class="list-group-item list-group-item-action  flex-row d-flex align-items-center  align-items-start ">
-            <img class="mr-2" src="../assets/list.png" height="40"  />
+            <img class="mr-2" src="./assets/list.png" height="40"  />
             <div class="d-flex w-100 justify-content-between">
                
                 <h6 class="mb-1 text-capitalize">${item.title}</h6>
@@ -162,5 +162,5 @@ checkFiveTaskCompleted = () => {
 }
 
 logOut = () => {
-    window.location.href = "../index.html";
+    window.location.href = "./index.html";
 }
