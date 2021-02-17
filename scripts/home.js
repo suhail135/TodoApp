@@ -3,6 +3,7 @@ console.log('Workkingg')
 
 
 var loading = document.getElementById('Loading')
+var container = document.getElementById('home')
 
 var totalValue = document.getElementById('totalValue')
 var completedValue = document.getElementById('completedValue')
@@ -29,7 +30,7 @@ load = () => {
 
     xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
-            loading.setAttribute('hidden', 'true');
+
             console.log('success', JSON.parse(this.response))
             Alltasks = JSON.parse(this.response);
             completedTasks = Alltasks.filter(task => {
@@ -46,6 +47,8 @@ load = () => {
             calculateCardValues()
             renderTasks(pendingTasks, document.getElementById('PendingTasksList'))
             renderTasks(completedTasks, document.getElementById('ComepletedTaskList'))
+            loading.setAttribute('hidden', 'true');
+            container.removeAttribute('hidden');
         }
     }
 
@@ -69,7 +72,7 @@ renderTasks = (list, roottag) => {
 
         if (item.completed) {
             innerContent += `<a id="Link${item.id}" class="list-group-item list-group-item-action flex-row d-flex align-items-center  align-items-start list-group-item-success ">
-            <img class="mr-2" src="./assets/complete.png" height="40"  />
+            <img class="mr-2" src="https://suhail135.github.io/TodoApp/assets/complete.png" height="40"  />
             <div class="d-flex w-100 justify-content-between">
                 
                 <h6 class="mb-1 text-capitalize">${item.title}</h6>
@@ -80,7 +83,7 @@ renderTasks = (list, roottag) => {
             </a>`
         } else {
             innerContent += `<a id="Link${item.id}" class="list-group-item list-group-item-action  flex-row d-flex align-items-center  align-items-start ">
-            <img class="mr-2" src="./assets/list.png" height="40"  />
+            <img class="mr-2" src="https://suhail135.github.io/TodoApp/assets/list.png" height="40"  />
             <div class="d-flex w-100 justify-content-between">
                
                 <h6 class="mb-1 text-capitalize">${item.title}</h6>
